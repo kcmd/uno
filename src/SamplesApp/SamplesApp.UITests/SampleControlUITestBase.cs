@@ -38,7 +38,8 @@ namespace SamplesApp.UITests
 			AppInitializer.TestEnvironment.iOSDeviceNameOrId = Constants.iOSDeviceNameOrId;
 			AppInitializer.TestEnvironment.CurrentPlatform = Constants.CurrentPlatform;
 
-#if true // DEBUG
+#if DEBUG
+			Console.WriteLine("*** WARNING Running Chrome with a head, this will fail when running in CI ***");
 			AppInitializer.TestEnvironment.WebAssemblyHeadless = false;
 #endif
 

@@ -149,23 +149,23 @@ jobs:
 
   strategy:
     matrix:
-      net5-default:
+      net5_default:
         SITE_SUFFIX: 'net5.0'
         UITEST_AUTOMATED_GROUP: 'Default'
 
-      net5-runtimetests:
+      net5_runtimetests:
         SITE_SUFFIX: 'net5.0'
         UITEST_AUTOMATED_GROUP: 'RuntimeTests'
 
-      net5-benchmarks:
+      net5_benchmarks:
         SITE_SUFFIX: 'net5.0'
         UITEST_AUTOMATED_GROUP: 'Benchmarks'
 
-      netstd2_0-default:
+      netstd2_0_default:
         SITE_SUFFIX: 'netstandard2.0'
         UITEST_AUTOMATED_GROUP: 'Default'
 
-      netstd2_0-runtimetests:
+      netstd2_0_runtimetests:
         SITE_SUFFIX: 'netstandard2.0'
         UITEST_AUTOMATED_GROUP: 'RuntimeTests'
 
