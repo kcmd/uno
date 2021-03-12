@@ -43,6 +43,8 @@ namespace SamplesApp.UITests.Runtime
 
 			_app.WaitForElement(runButton);
 
+			TakeScreenshot("Begin", ignoreInSnapshotCompare: true);
+
 			_app.FastTap(runButton);
 
 			var lastChange = DateTimeOffset.Now;

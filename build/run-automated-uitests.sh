@@ -25,7 +25,7 @@ export UNO_TESTS_RESPONSE_FILE=$BUILD_SOURCESDIRECTORY/build/nunit.response
 if [ "$UITEST_AUTOMATED_GROUP" == 'Default' ];
 then
 	export TEST_FILTERS=" \
-		class = namespace != 'SamplesApp.UITests.Snap' \
+		namespace != 'SamplesApp.UITests.Snap' \
 		and class != 'SamplesApp.UITests.Runtime.RuntimeTests' \
 		and class = 'SamplesApp.UITests.Runtime.BenchmarkDotNetTests' \
 	"
