@@ -38,7 +38,7 @@ namespace SamplesApp.UITests
 			AppInitializer.TestEnvironment.iOSDeviceNameOrId = Constants.iOSDeviceNameOrId;
 			AppInitializer.TestEnvironment.CurrentPlatform = Constants.CurrentPlatform;
 
-#if DEBUG
+#if true // DEBUG
 			AppInitializer.TestEnvironment.WebAssemblyHeadless = false;
 #endif
 

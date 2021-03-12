@@ -149,11 +149,25 @@ jobs:
 
   strategy:
     matrix:
-      net5:
+      net5-default:
         SITE_SUFFIX: 'net5.0'
+        UITEST_AUTOMATED_GROUP: 'Default'
 
-      netstd2_0:
+      net5-runtimetests:
+        SITE_SUFFIX: 'net5.0'
+        UITEST_AUTOMATED_GROUP: 'RuntimeTests'
+
+      net5-benchmarks:
+        SITE_SUFFIX: 'net5.0'
+        UITEST_AUTOMATED_GROUP: 'Benchmarks'
+
+      netstd2_0-default:
         SITE_SUFFIX: 'netstandard2.0'
+        UITEST_AUTOMATED_GROUP: 'Default'
+
+      netstd2_0-runtimetests:
+        SITE_SUFFIX: 'netstandard2.0'
+        UITEST_AUTOMATED_GROUP: 'RuntimeTests'
 
   pool:
     vmImage: ${{ parameters.vmImage }}
