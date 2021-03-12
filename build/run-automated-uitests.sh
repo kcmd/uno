@@ -41,7 +41,6 @@ then
 		export TEST_FILTERS=" \
 			class = 'SamplesApp.UITests.Runtime.BenchmarkDotNetTests'
 		"
-then
 fi
 
 mkdir -p $UNO_UITEST_SCREENSHOT_PATH
