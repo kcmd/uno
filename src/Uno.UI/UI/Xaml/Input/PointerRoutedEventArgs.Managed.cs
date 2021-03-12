@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNO_HAS_MANAGED_POINTERS
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
@@ -21,7 +22,7 @@ namespace Windows.UI.Xaml.Input
 			UIElement source) : this()
 		{
 			_pointerEventArgs = pointerEventArgs;
-			_absolutePosition = pointerEventArgs.CurrentPoint.RawPosition;
+			_absolutePosition = pointerEventArgs.CurrentPoint.Position;
 
 			FrameId = pointerEventArgs.CurrentPoint.FrameId;
 			Pointer = GetPointer(pointerEventArgs);
@@ -49,3 +50,4 @@ namespace Windows.UI.Xaml.Input
 				isInRange: args.CurrentPoint.Properties.IsInRange);
 	}
 }
+#endif
