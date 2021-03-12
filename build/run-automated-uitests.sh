@@ -27,7 +27,7 @@ then
 	export TEST_FILTERS=" \
 		namespace != 'SamplesApp.UITests.Snap' \
 		and class != 'SamplesApp.UITests.Runtime.RuntimeTests' \
-		and class = 'SamplesApp.UITests.Runtime.BenchmarkDotNetTests' \
+		and class != 'SamplesApp.UITests.Runtime.BenchmarkDotNetTests' \
 	"
 
 elif [ "$UITEST_AUTOMATED_GROUP" == 'RuntimeTests' ];
