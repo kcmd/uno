@@ -36,6 +36,8 @@
       href: howto-consume-webservices.md
     - name: How to integrate SignalR
       href: signalr.md
+    - name: How to update StatusBar color based on dark/light theme
+      href: guides/status-bar-theme-color.md
     - name: How to use MSAL for Azure Authentication
       href: interop/MSAL.md
     - name: Tutorial - Silverlight migration
@@ -407,4 +409,3 @@
           href: uno-development\troubleshooting-memory-issues.md
         - name: Troubleshooting Source Generation
           href: uno-development\troubleshooting-source-generation.md
-      
