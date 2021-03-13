@@ -52,11 +52,19 @@ namespace SamplesApp.UITests.Runtime
 
 			while (DateTimeOffset.Now - lastChange < TestRunTimeout)
 			{
-				var newValue = runCount.GetDependencyPropertyValue("Text")?.ToString();
+				try
+				{ 
+					var newValue = runCount.GetDependencyPropertyValue("Text")?.ToString();
 
-				if (lastValue != newValue)
+					if (lastValue != newValue)
+					{
+						lastChange = DateTimeOffset.Now;
+						TakeScreenshot($"Run {newValue}", ignoreInSnapshotCompare: true);
+					}
+				}
+				catch(Exception e)
 				{
-					lastChange = DateTimeOffset.Now;
+					// Skip exceptions as they may be timeouts
 				}
 
 				await Task.Delay(TimeSpan.FromSeconds(.5));
