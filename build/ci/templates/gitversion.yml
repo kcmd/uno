@@ -12,16 +12,23 @@ steps:
     displayName: Update GitVersion file for PullRequests
 
   - task: UseDotNet@2
+    displayName: 'Use .NET 6 SDK'
+    inputs:
+      packageType: sdk
+      version: 6.0.100-preview.2.21155.3
+      includePreviewVersions: true
+
+  - task: UseDotNet@2
     displayName: 'Use .Net Core runtime 5.0.3'
     inputs:
-      packageType: runtime
-      version: 5.0.3
+      packageType: sdk
+      version: 5.0.103
 
   - task: UseDotNet@2
     displayName: 'Use .Net Core runtime 3.1.12'
     inputs:
-      packageType: runtime
-      version: 3.1.12
+      packageType: sdk
+      version: 3.1.406
 
   - task: gitversion/setup@0
     inputs:
