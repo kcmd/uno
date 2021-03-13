@@ -19,7 +19,7 @@ namespace SamplesApp.UITests.Runtime
 	{
 		private const string PendingTestsText = "Pending...";
 		private const string BenchmarkOutputPath = "UNO_UITEST_BENCHMARKS_PATH";
-		private readonly TimeSpan TestRunTimeout = TimeSpan.FromMinutes(2);
+		private readonly TimeSpan TestRunTimeout = TimeSpan.FromMinutes(5);
 
 		[Test]
 		[AutoRetry(tryCount: 1)]
