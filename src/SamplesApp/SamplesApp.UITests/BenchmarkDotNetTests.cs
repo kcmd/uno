@@ -45,36 +45,36 @@ namespace SamplesApp.UITests.Runtime
 
 			TakeScreenshot("Begin", ignoreInSnapshotCompare: true);
 
-			//_app.FastTap(runButton);
+			_app.FastTap(runButton);
 
-			//var lastChange = DateTimeOffset.Now;
-			//var lastValue = "";
+			var lastChange = DateTimeOffset.Now;
+			var lastValue = "";
 
-			//while (DateTimeOffset.Now - lastChange < TestRunTimeout)
-			//{
-			//	var newValue = runCount.GetDependencyPropertyValue("Text")?.ToString();
+			while (DateTimeOffset.Now - lastChange < TestRunTimeout)
+			{
+				var newValue = runCount.GetDependencyPropertyValue("Text")?.ToString();
 
-			//	if (lastValue != newValue)
-			//	{
-			//		lastChange = DateTimeOffset.Now;
-			//	}
+				if (lastValue != newValue)
+				{
+					lastChange = DateTimeOffset.Now;
+				}
 
-			//	await Task.Delay(TimeSpan.FromSeconds(.5));
+				await Task.Delay(TimeSpan.FromSeconds(.5));
 
-			//	if (IsTestExecutionDone())
-			//	{
-			//		break;
-			//	}
-			//}
+				if (IsTestExecutionDone())
+				{
+					break;
+				}
+			}
 
-			//if (!IsTestExecutionDone())
-			//{
-			//	Assert.Fail("A test run timed out");
-			//}
+			if (!IsTestExecutionDone())
+			{
+				Assert.Fail("A test run timed out");
+			}
 
-			//var finalFile = ArchiveResults(benchmarkControl);
+			var finalFile = ArchiveResults(benchmarkControl);
 
-			//TestContext.AddTestAttachment(finalFile, "benchmark-results.zip");
+			TestContext.AddTestAttachment(finalFile, "benchmark-results.zip");
 
 			TakeScreenshot("Runtime Tests Results", ignoreInSnapshotCompare: true);
 		}
