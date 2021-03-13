@@ -51,7 +51,7 @@ namespace Benchmarks.Shared.Controls
 		public static readonly DependencyProperty ResultsAsBase64Property =
 			DependencyProperty.Register("ResultsAsBase64", typeof(string), typeof(BenchmarkDotNetControl), new PropertyMetadata(""));
 
-		public string ClassFilter { get; set; } = "XamlControlsResourcesReadBenchmark";
+		public string ClassFilter { get; set; } = "";
 
 		private void OnRunTests(object sender, object args)
 		{
