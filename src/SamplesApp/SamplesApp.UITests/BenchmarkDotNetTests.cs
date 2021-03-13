@@ -54,6 +54,11 @@ namespace SamplesApp.UITests.Runtime
 			{
 				try
 				{ 
+					if (IsTestExecutionDone())
+					{
+						break;
+					}
+
 					var newValue = runCount.GetDependencyPropertyValue("Text")?.ToString();
 
 					if (lastValue != newValue)
@@ -68,11 +73,6 @@ namespace SamplesApp.UITests.Runtime
 				}
 
 				await Task.Delay(TimeSpan.FromSeconds(.5));
-
-				if (IsTestExecutionDone())
-				{
-					break;
-				}
 			}
 
 			if (!IsTestExecutionDone())
