@@ -39,7 +39,17 @@ namespace SamplesApp.UITests.Runtime
 			var benchmarkControl = new QueryEx(q => AllQuery(q).Marked("benchmarkControl"));
 
 			bool IsTestExecutionDone()
-				=> runStatus.GetDependencyPropertyValue("Text")?.ToString().Equals("Finished", StringComparison.OrdinalIgnoreCase) ?? false;
+			{
+				try
+				{ 
+					return runStatus.GetDependencyPropertyValue("Text")?.ToString().Equals("Finished", StringComparison.OrdinalIgnoreCase) ?? false;
+				}
+				catch
+				{
+					// Skip exceptions as they may be timeouts
+					return false;
+				}
+			}
 
 			_app.WaitForElement(runButton);
 
